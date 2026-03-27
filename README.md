@@ -20,8 +20,11 @@ Our GitHub Organization tracks our modular microservices and third-party upstrea
 
 ### 🌟 Core Repositories
 . ewc-compute-platform-1 (This Repo): The central hub containing platform specifications, architectural decision records (ADRs), and unified deployment scripts.
+
 . ewc-ui-dashboards: Modern Next.js/React web app for user authentication, telemetry monitoring, and secure enterprise logins.
+
 . ewc-physical-ai: Python-driven backend microservices hosting our LLMs, vector DBs (RAG), and agentic toolkits for engineering chat.
+
 . ewc-compute-templates: Curated Dockerfiles and Terraform scripts containerizing OpenFOAM, structural FEM, and custom solvers.
 
 ### 🍴 Forked & Tracked Upstreams
