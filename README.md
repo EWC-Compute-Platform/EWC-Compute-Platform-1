@@ -59,10 +59,12 @@ To ensure software stability in high-stakes engineering environments, we enforce
 
 ### PR Requirements
 1. **Branch Naming**: ```Bash
-                       feature/ewc-[ticket-number]``` ,
+                       feature/ewc-[ticket-number]
+                      ```,
 ```Bash
 fix/ewc-[ticket-number], or docs/update.
 ```
+
 2. **Issue Linking**: Every PR must address an open Issue in the repository.
 3. **Continuous Integration**: Automated GitHub Actions (Linters, Unit Tests) must pass before a review can be assigned.
 4. Review Policy: At least one Peer Approval is required for *main* merge.
@@ -74,15 +76,14 @@ fix/ewc-[ticket-number], or docs/update.
 
 ### 💡 Industry Inspiration
 Our platform features are constantly evolving based on insights from industry leaders and emerging technologies:
-#### 📰 Engineering World Company (Substack): (https://engineeringworldcompany.substack.com/p/ai-the-aerodynamics-shortcut)
+#### 📰 Engineering World Company (Substack): [AI the Aerodynamics Shortcut]([AI the Aerodynamics Shortcut](https://engineeringworldcompany.substack.com/p/ai-the-aerodynamics-shortcut))
 #### 🏭 NVIDIA GTC Event Sessions Harnessing cuDSS, Modulus, and Omniverse for real-time factory floor simulations.
 #### 🌐 3DExperience World:Adopting holistic UI/UX concepts for industrial design.
 
 <p align="center">
 Built with 💙 by the <b>Engineering World Company</b>.
 
-
-<i>Empowering the next generation of digital industrial engineering.</i>
+  <i>Empowering the next generation of digital industrial engineering.</i>
 </p>
 
 
