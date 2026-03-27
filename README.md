@@ -59,10 +59,10 @@ To ensure software stability in high-stakes engineering environments, we enforce
 
 ### PR Requirements
 1. **Branch Naming**:
- ```Bash
+```Bash
 feature/ewc-[ticket-number]
 ``` 
-,
+
 ```Bash
 fix/ewc-[ticket-number], or docs/update.
 ```
@@ -78,7 +78,7 @@ fix/ewc-[ticket-number], or docs/update.
 
 ### 💡 Industry Inspiration
 Our platform features are constantly evolving based on insights from industry leaders and emerging technologies:
-#### 📰 Engineering World Company (Substack): [AI the Aerodynamics Shortcut]([AI the Aerodynamics Shortcut](https://engineeringworldcompany.substack.com/p/ai-the-aerodynamics-shortcut))
+#### 📰 Engineering World Company (Substack): [AI the Aerodynamics Shortcut](https://engineeringworldcompany.substack.com/p/ai-the-aerodynamics-shortcut)
 #### 🏭 NVIDIA GTC Event Sessions Harnessing cuDSS, Modulus, and Omniverse for real-time factory floor simulations.
 #### 🌐 3DExperience World:Adopting holistic UI/UX concepts for industrial design.
 
