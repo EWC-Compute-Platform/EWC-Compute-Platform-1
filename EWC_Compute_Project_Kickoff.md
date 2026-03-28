@@ -202,7 +202,7 @@ This layer is not beneath infrastructure — it wraps and governs every layer ab
 ### Phase 1 — Physical AI Assistant MVP (Weeks 5–10)
 **Goal:** The AI copilot is the highest-value, lowest-infrastructure-dependency pillar to build first. It generates immediate value and seeds the engineering corpus.
 
-- DSR-CRAG pipeline connected to founding engineering corpus (6 papers)
+- DSR-CRAG pipeline connected to founding engineering corpus (research papers or other types of resources, such as industry assets)
 - Chat interface with source citation and confidence display
 - Basic engineering query types: literature lookup, parameter estimation
 - Human-confirmation gate before any agent-triggered action
