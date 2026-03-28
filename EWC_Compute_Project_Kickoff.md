@@ -170,7 +170,7 @@ This layer is not beneath infrastructure — it wraps and governs every layer ab
 
 ### Business Moats
 
-**1. Engineering corpus & RAG quality:** The platform's AI assistant is only as good as its knowledge base. Building and curating a high-quality, domain-specific engineering corpus — starting with the six founding papers and expanding systematically — creates a durable knowledge moat that improves with usage.
+**1. Engineering corpus & RAG quality:** The platform's AI assistant is only as good as its knowledge base. Building and curating a high-quality, domain-specific engineering corpus — expanding systematically — creates a durable knowledge moat that improves with usage.
 
 **2. Template library network effects:** As engineers share and refine computational templates, the library grows in quality and coverage. A well-populated template library with community ratings is a significant switching cost.
 
