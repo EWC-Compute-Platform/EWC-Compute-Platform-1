@@ -78,8 +78,10 @@ Each row maps to a platform phase. Libraries in earlier phases are available to 
 │  cuDSS — direct sparse (FEM · structural · EDA)                    │
 │  AmgX  — algebraic multigrid (large-scale CFD · electromagnetics)  │
 │  cuSPARSE · cuBLAS · cuSOLVER — shared numerical kernels           │
+│  Flow360 (Flexcompute) — GPU-native CFD · thermal (primary CFD)    │
+│  Tidy3D (Flexcompute) — optical/photonic domain                    │
 │  Ansys Fluent / LS-DYNA adapter — CFD · collision domains           │
-│  → 20–500× speedups over CPU baselines                              │
+│  → 20–500× speedups · Flow360 100× faster than CPU CFD             │
 ├─────────────────────────────────────────────────────────────────────┤
 │  ◆ PHASE 2–3 — AI PHYSICS ENGINE (surrogate + generative modes)    │
 │  PhysicsNeMo — AI surrogate training framework                      │
@@ -152,7 +154,9 @@ Prompt-driven engineering copilot grounded in a curated engineering corpus. Uses
 | Omniverse SDK | OpenUSD Exchange SDK | latest | 3 | Production USD I/O, SimReady compatibility |
 | Physics-in-USD | `ovphysx` | GTC 2026 | 3 | Agent-native physics microservice |
 | Solver acceleration | CUDA-X: cuDSS · AmgX · cuSPARSE · cuBLAS | — | 2+ | cuDSS = direct sparse; AmgX = iterative multigrid; 20–500× speedups |
-| Sim Bridge | Lumerical · COMSOL · Ansys (Fluent/LS-DYNA) | — | 2 | Solver-agnostic adapter pattern; domains: CFD · FEM · EDA · collision · optical |
+| **CFD / thermal solver** | **Flow360 (Flexcompute)** | **25.5.5+** | **2** | **GPU-native, cloud-hosted, `pip install flow360`; 100× faster than CPU CFD** |
+| **Optical solver** | **Tidy3D (Flexcompute)** | **latest** | **2** | **FDTD photonics/EM; `pip install tidy3d`; shared Flexcompute account** |
+| Sim Bridge | Lumerical · COMSOL · Ansys (Fluent/LS-DYNA) | — | 2 | Solver-agnostic adapter pattern; secondary solvers for on-premise/Enterprise |
 | Fabrication export | gdspy · numpy-stl · Open CASCADE | — | 3 | GDSII, STL, STEP/IGES |
 | Auth | JWT + OAuth2 + PKCE | — | 0 | Stateless, standards-compliant |
 | Job queue | Redis + Celery | 7 / 5 | 0 | Async simulation dispatch |
@@ -291,7 +295,8 @@ EWC-Compute-Platform-1/
 │   │   ├── ADR-002-openusd-twin-format.md
 │   │   ├── ADR-003-sim-bridge-adapter-pattern.md
 │   │   ├── ADR-004-ai-mode-explicit-field.md
-│   │   └── ADR-005-physicsnemo-ai-physics-framework.md
+│   │   ├── ADR-005-physicsnemo-ai-physics-framework.md
+│   │   └── ADR-006-flow360-flexcompute-integration.md
 │   ├── api/                        # OpenAPI specs (auto-generated)
 │   └── engineering/                # Domain documentation
 │
@@ -646,12 +651,16 @@ EWC Compute Team Project
 | NVIDIA Warp | `pip install warp-lang` | 3 | GPU kernels, data generation |
 | CUDA-X (cuDSS) | Via COMSOL / Ansys adapters | 2 | Direct sparse FEM / structural |
 | CUDA-X (AmgX) | Via COMSOL / OpenFOAM adapters | 2–3 | Large-scale CFD / EM |
+| **Flow360 (Flexcompute)** | **`pip install flow360`** | **2** | **Primary CFD + thermal solver; GPU-native cloud; 100× faster than CPU CFD** |
+| **Tidy3D (Flexcompute)** | **`pip install tidy3d`** | **2** | **Optical / photonic domain; same Flexcompute account as Flow360** |
+| **AutoInsight (Flexcompute)** | **Flexcompute API** | **3** | **AI aerodynamic optimisation → `generative` ai_mode for CFD domain** |
+| **GeometryAI (Flexcompute)** | **Flexcompute API** | **3** | **Automated CAD geometry preprocessing in Digital Twin Engine** |
 | OpenUSD Exchange SDK | NGC container | 3 | SimReady twin export |
 | ovphysx | NGC microservice | 3 | Physics-in-USD validation |
 | Omniverse Nucleus | Self-hosted / NGC | 4 | Team twin collaboration |
-| COMSOL | REST / LiveLink API | 2 | Multiphysics principled_solve |
-| Lumerical (Ansys) | Python API | 2 | Optical / photonic domain |
-| Ansys Fluent | REST API | 2–3 | CFD domain, 500× GPU speedup |
+| COMSOL | REST / LiveLink API | 2 | Multiphysics principled_solve (on-premise / Enterprise) |
+| Lumerical (Ansys) | Python API | 2 | Optical domain (alternative to Tidy3D) |
+| Ansys Fluent | REST API | 2–3 | CFD domain (alternative to Flow360 for on-premise) |
 | Ansys LS-DYNA | REST API | 3 | Collision simulation domain |
 | Cadence / Synopsys | EDA adapter stub | 3 | EDA domain |
 | SimReady SDK | Validation layer | 3 | Certified component asset consumption |
@@ -706,6 +715,7 @@ Current ADRs:
 - **ADR-003** — Sim Bridge adapter pattern (solver-agnostic abstraction)
 - **ADR-004** — `ai_mode` as an explicit schema field (generative / surrogate / principled\_solve)
 - **ADR-005** — PhysicsNeMo as AI physics framework (replaces generic cWGAN-GP + PINNs description)
+- **ADR-006** — Flow360 as primary CFD solver and Flexcompute integration strategy
 
 ---
 
