@@ -31,11 +31,6 @@ jobs:
           python-version: "3.12"
           cache: "pip"
           cache-dependency-path: backend/requirements-dev.txt
-          
-       - name: Install System Graphics Libs (for USD)
-           run: |
-            sudo apt-get update
-            sudo apt-get install -y libopengl0 libgl1-mesa-glx libx11-6
 
       - name: Install dependencies
         working-directory: backend
