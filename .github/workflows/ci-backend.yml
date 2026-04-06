@@ -34,7 +34,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: backend
-        continue-on-error: true
+        #continue-on-error: true
         run: |
           pip install --upgrade pip
           pip install -r requirements-dev.txt
