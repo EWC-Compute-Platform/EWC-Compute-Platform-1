@@ -71,3 +71,21 @@ langchain-openai==0.2.14            # LangChain ↔ OpenAI-compatible endpoint (
 python-dotenv==1.0.1                # .env loading (redundant with pydantic-settings but useful in scripts)
 tenacity==9.0.0                     # Retry logic for solver API calls and NIM requests
 anyio==4.7.0                        # Async compatibility (FastAPI / Celery interop)
+
+# requirements.txt  ← CI installs this
+fastapi>=0.115.0
+pydantic>=2.0.0
+motor>=3.3.0          # async MongoDB
+redis>=5.0.0
+celery>=5.3.0
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.9
+httpx>=0.27.0
+opentelemetry-api>=1.24.0
+opentelemetry-sdk>=1.24.0
+usd-core==25.08       # Phase 0 — small enough, keep here
+
+# requirements-nvidia.txt  ← local only until Phase 2
+warp-lang
+physicsnemo
