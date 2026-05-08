@@ -1,7 +1,7 @@
 # ADR-004 — `ai_mode` as an Explicit Schema Field
 
 **Status:** Accepted
-**Date:** March 2026
+**Date:** April 2026
 **Deciders:** Engineering World Company
 **Relates to:** ADR-001 (technology stack), ADR-003 (Sim Bridge adapter pattern),
                ADR-005 (PhysicsNeMo), ADR-006 (Flow360), ADR-007 (surrogate_compute_budget)
