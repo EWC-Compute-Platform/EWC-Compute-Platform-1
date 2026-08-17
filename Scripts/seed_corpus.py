@@ -378,6 +378,19 @@ def get_phase1_sources() -> list[dict[str, Any]]:
       authoritative — peer-reviewed, standards body, or official NVIDIA docs
       reference     — high-quality technical reference (EWC Substack, curated)
       model_estimate — not used for seeding (only for live assistant responses)
+      {
+    "source": "Sun R, Li YM, Fu TZ et al. Digital twin optical computing system. "
+              "Opto-Electron Adv 9, 250254 (2026)",
+    "title": "Digital Twin Optical Computing System (DT-OCS)",
+    "domain": "optical",
+    "confidence_tier": "authoritative",
+    "metadata": {
+        "doi": "10.29026/oea.2026.250254",
+        "url": "https://www.oejournal.org/oea/article/doi/10.29026/oea.2026.250254",
+        "code_repository": "https://cloud.tsinghua.edu.cn/d/146f72dd4f2b46f394bd/",
+        "institution": "Tsinghua University, National University of Defense Technology",
+    },
+},
     """
     repo_root = Path(__file__).parent.parent
     substack_dir = repo_root / "Substack-Articles"
